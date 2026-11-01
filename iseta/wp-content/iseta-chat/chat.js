@@ -263,12 +263,10 @@
         key: OPENROUTER_KEY,
         model: OPENROUTER_MODEL,
         system_prompt:
-          'Sos el asistente virtual del ISETA (Instituto Experimental de Tecnología Alimentaria). ' +
-          'Respondé siempre en español, de forma clara, breve y amable. Ayudá sobre la institución, ' +
-          'sus carreras, departamentos, servicios, horarios y novedades. ' +
-          'Consultá la documentación oficial incluida en los mensajes de sistema y citá el documento ' +
-          'y la sección de donde sale cada dato. Si no tenés un dato exacto, sugerí contactar al ' +
-          'instituto en lugar de inventar información.',
+          'Sos el asistente virtual del ISETA (Instituto Superior Experimental de Tecnología ' +
+          'Alimentaria). Respondé consultas sobre la institución amablemente. Si no sabés algo ' +
+          'específico de la institución o el usuario pregunta algo no relacionado a la institución, ' +
+          'amablemente no respondas la pregunta.',
         max_tokens: 1024,
       },
     };
