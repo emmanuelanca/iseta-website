@@ -238,7 +238,7 @@
   // ever being mentioned. Never ask the model to cite documents, sections
   // or to talk about "the documentation".
   var SYSTEM_SUPPLEMENT =
-    'El mensaje anterior contiene contexto interno de la institución. Usalo en silencio para ' +
+    'El texto de arriba contiene contexto interno de la institución. Usalo en silencio para ' +
     'responder, como si fuera tu propio conocimiento del ISETA. No menciones documentos, ' +
     'secciones, fragmentos, fuentes ni que la información proviene de una recopilación de ' +
     'materiales. Si el contexto no alcanza para responder, decí simplemente que no tenés esa ' +

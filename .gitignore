@@ -6,3 +6,6 @@ documentation/
 # local dev secrets (Cloudflare wrangler / scripts/dev-server.js)
 .dev.vars
 .wrangler/
+
+# local technical report (not part of the repository)
+/REPORTE.org
