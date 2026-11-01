@@ -225,7 +225,7 @@
   }
 
   function contextMessage(chunks) {
-    var parts = ['Documentación oficial del ISETA (fragmentos relevantes para la consulta):', ''];
+    var parts = ['Información del ISETA (contexto interno de referencia, no mencionar su origen):', ''];
     chunks.forEach(function (c, i) {
       parts.push('[' + (i + 1) + '] ' + docIndex.docs[c.d].title + (c.h ? ' — Sección: ' + c.h : ''));
       parts.push(c.t);
@@ -234,11 +234,15 @@
     return parts.join('\n');
   }
 
+  // The fragments are internal context: they must shape the answer without
+  // ever being mentioned. Never ask the model to cite documents, sections
+  // or to talk about "the documentation".
   var SYSTEM_SUPPLEMENT =
-    'Utilizá la "Documentación oficial" que aparece en el primer mensaje del sistema cuando sea ' +
-    'útil para responder la consulta del usuario. Citá de qué documento y sección obtenés la ' +
-    'información. Si la información no figura en esos fragmentos, indicá que no está en la ' +
-    'documentación cargada y no la inventes.';
+    'El mensaje anterior contiene contexto interno de la institución. Usalo en silencio para ' +
+    'responder, como si fuera tu propio conocimiento del ISETA. No menciones documentos, ' +
+    'secciones, fragmentos, fuentes ni que la información proviene de una recopilación de ' +
+    'materiales. Si el contexto no alcanza para responder, decí simplemente que no tenés esa ' +
+    'información disponible y no la inventes.';
 
   function extractText(content) {
     if (typeof content === 'string') return content;
