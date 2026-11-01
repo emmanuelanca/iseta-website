@@ -1,0 +1,21 @@
+{
+  // Cloudflare Workers configuration (Static Assets + /api routes).
+  //
+  // - `main` makes this a real Worker (required for environment variables
+  //   and secrets; a static-assets-only project cannot hold them).
+  // - `assets.directory` is the mirrored site. Requests that match an asset
+  //   are served by Cloudflare without invoking the Worker.
+  // - `assets.binding` exposes the files to the Worker as env.ASSETS, used
+  //   for the 404 fallback.
+  //
+  // If your Worker in the dashboard has a different name, change `name`
+  // below to match it (or rename the Worker).
+  "name": "iseta-website",
+  "main": "worker/index.js",
+  "compatibility_date": "2026-11-01",
+  "assets": {
+    "directory": "./iseta",
+    "binding": "ASSETS",
+    "not_found_handling": "none"
+  }
+}
