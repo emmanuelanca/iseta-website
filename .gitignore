@@ -1,1 +1,4 @@
 scripts/.embeddings-cache.json
+
+# documentation sources are kept out of the repository (local-only)
+documentation/
