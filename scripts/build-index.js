@@ -3,7 +3,7 @@
  * build-index.js — kite documentation/*.md into a browser-ready index for the
  * ISETA chat widget (client-side BM25 retrieval + top-K context injection).
  *
- * Usage: node documentation/build-index.js
+ * Usage: node scripts/build-index.js
  * Output: iseta/wp-content/iseta-chat/docs-index.json
  *
  * Chunking strategy: split each markdown file on heading lines, build the
@@ -15,7 +15,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const SRC_DIR = path.join(__dirname);
+const SRC_DIR = path.join(__dirname, '..', 'documentation');
 const OUT_PATH = path.join(__dirname, '..', 'iseta', 'wp-content', 'iseta-chat', 'docs-index.json');
 
 const MAX_CHUNK_CHARS = 800;   // target chunk size (~200 tokens)

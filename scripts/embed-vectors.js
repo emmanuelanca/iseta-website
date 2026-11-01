@@ -5,7 +5,7 @@
  * writes a compact binary vector store consumed by the chat widget for
  * semantic (cosine similarity) retrieval.
  *
- * Usage: node documentation/embed-vectors.js
+ * Usage: node scripts/embed-vectors.js
  *
  * - Vectors are L2-normalized and quantized to int8 + per-vector scale
  *   (4x smaller than float32; cosine ranking quality is preserved).
