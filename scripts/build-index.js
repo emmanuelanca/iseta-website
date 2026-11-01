@@ -30,6 +30,7 @@ const TITLE_OVERRIDES = {
     'Diseño Curricular — Tecnicatura Superior Analista de Servicios Gastronómicos',
   'disenio-curricular-higiene-seguridad.md':
     'Diseño Curricular — Tecnicatura Superior en Higiene y Seguridad en el Trabajo',
+  'sobre-nosotros.md': 'Información Institucional — ¿Quiénes somos?',
 };
 
 // friendly labels are derived from the document itself; fallback below
