@@ -91,6 +91,30 @@
 .iseta-chat-body {
   flex: 1;
   min-height: 0;
+  overflow: auto;
+}
+
+/* Scrollbar on whatever part of the panel body scrolls */
+.iseta-chat-body::-webkit-scrollbar {
+  width: 8px;
+}
+
+.iseta-chat-body::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.iseta-chat-body::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.22);
+  border-radius: 6px;
+}
+
+.iseta-chat-body::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.38);
+}
+
+.iseta-chat-body {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(0, 0, 0, 0.28) transparent;
 }
 
 .iseta-chat-body deep-chat {

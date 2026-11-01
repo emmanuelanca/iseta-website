@@ -111,6 +111,16 @@
     chatEl.textInput = {
       placeholder: { text: 'Escribí tu pregunta…' },
     };
+
+    // Scrollbars: styled scrollbar inside the component (shadow DOM) and a
+    // scrollable message area within the fixed-panel height.
+    chatEl.auxiliaryStyle = [
+      '::-webkit-scrollbar { width: 8px; }',
+      '::-webkit-scrollbar-track { background: transparent; }',
+      '::-webkit-scrollbar-thumb { background: rgba(0, 0, 0, 0.22); border-radius: 6px; }',
+      '::-webkit-scrollbar-thumb:hover { background: rgba(0, 0, 0, 0.38); }',
+      '* { scrollbar-width: thin; scrollbar-color: rgba(0, 0, 0, 0.28) transparent; }',
+    ].join('\n');
     chatEl.requestBodyLimits = { maxMessages: 12 };
     chatEl.errorMessages = {
       displayServiceErrorMessages: true,
