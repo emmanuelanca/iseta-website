@@ -383,8 +383,8 @@
     chatEl.stream = true;
     chatEl.introMessage = {
       text:
-        '¡Hola! 👋 Soy el asistente virtual del ISETA. Preguntame sobre el instituto, sus carreras, ' +
-        'materias, carga horaria y la documentación oficial (diseños curriculares).',
+        '¡Hola! 👋 Soy el asistente virtual del ISETA. Podés preguntarme lo que quieras ' +
+        'sobre la institución y las carreras.',
     };
     chatEl.textInput = {
       placeholder: { text: 'Escribí tu pregunta…' },
