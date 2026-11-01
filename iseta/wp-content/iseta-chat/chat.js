@@ -10,10 +10,6 @@
   var OPENROUTER_MODEL = 'openai/gpt-4o-mini';
   var DEEP_CHAT_BUNDLE = 'https://unpkg.com/deep-chat@2.5.1/dist/deepChat.bundle.js';
 
-  var OPENROUTER_KEY = 'REDACTED';
-  var OPENROUTER_MODEL = 'openai/gpt-4o-mini';
-  var DEEP_CHAT_BUNDLE = 'https://unpkg.com/deep-chat@2.5.1/dist/deepChat.bundle.js';
-
   var scriptEl = document.currentScript;
   var base = scriptEl ? scriptEl.src.slice(0, scriptEl.src.lastIndexOf('/') + 1) : '';
 
