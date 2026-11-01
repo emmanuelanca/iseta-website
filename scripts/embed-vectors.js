@@ -23,7 +23,24 @@ const INDEX_PATH = path.join(__dirname, '..', 'iseta', 'wp-content', 'iseta-chat
 const VECTORS_PATH = path.join(__dirname, '..', 'iseta', 'wp-content', 'iseta-chat', 'docs-vectors.bin');
 const CACHE_PATH = path.join(__dirname, '.embeddings-cache.json');
 
-const OPENROUTER_KEY = 'REDACTED';
+// The key is never stored in the repository: read OPENROUTER_API_KEY from the
+// environment or from the git-ignored .dev.vars at the repo root.
+const DEV_VARS_PATH = path.join(__dirname, '..', '.dev.vars');
+if (fs.existsSync(DEV_VARS_PATH) && !process.env.OPENROUTER_API_KEY) {
+  for (const line of fs.readFileSync(DEV_VARS_PATH, 'utf8').split('\n')) {
+    const m = line.match(/^\s*([A-Za-z_][A-Za-z0-9_]*)\s*=\s*(.*)\s*$/);
+    if (m) process.env[m[1]] ??= m[2].replace(/^["']|["']$/g, '');
+  }
+}
+const OPENROUTER_KEY = process.env.OPENROUTER_API_KEY;
+if (!OPENROUTER_KEY) {
+  console.error(
+    'Falta OPENROUTER_API_KEY.\n' +
+      'Definila como variable de entorno o creá .dev.vars en la raíz del repo con:\n' +
+      '  OPENROUTER_API_KEY=sk-or-...'
+  );
+  process.exit(1);
+}
 const EMBED_MODEL = 'qwen/qwen3-embedding-8b';
 const EMBED_URL = 'https://openrouter.ai/api/v1/embeddings';
 const BATCH_SIZE = 32;
